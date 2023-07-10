@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan&family=Montserrat&family=Poppins:wght@400;500;600&family=Roboto+Slab&family=Ubuntu:wght@400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: rgb(22, 223, 146);
+}
+.container {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 25px;
+  margin: 85px auto 0;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.container .input-field {
+  position: relative;
+  height: 70px;
+  width: 100%;
+}
+.input-field textarea {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  font-weight: 400;
+  padding: 20px 45px 20px 15px;
+  outline: none;
+  border: 1px solid #ccc;
+  resize: none;
+}
+.input-field textarea:focus {
+  border-color: blue;
+}
+textarea::-webkit-scrollbar {
+  display: none;
+}
+.input-field .note-icon {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: grey;
+}
+.input-field textarea:focus ~ .note-icon {
+  color: blue;
+}
+.container .todolists {
+  max-height: 380px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+.todolists .list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  background: #f2f2f2;
+  padding: 20px 15px;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.todolists .list input {
+  height: 17px;
+  min-width: 17px;
+  accent-color: rgb(0, 119, 255);
+  /* pointer-events: none; */
+}
+.todolists .list .task {
+  margin: 0 30px 0 15px;
+  word-break: break-all;
+}
+
+.list input:checked ~ .task {
+  text-decoration: line-through;
+}
+
+.todolists .list i {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  padding: 5px;
+  color: grey;
+  opacity: 0.6;
+  display: none;
+}
+.todolists .list:hover i {
+  display: inline-flex;
+}
+.todolists .list i:hover {
+  opacity: 1;
+}
+.container .pending-tasks {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+.pending-tasks span {
+  color: gray;
+}
+
+.pending-tasks .clear-button {
+  pad: 6px 12px;
+  outline: none;
+  border: none;
+  background: rgb(0, 153, 255);
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.clear-button:hover {
+  background-color: blue;
+}
+
+@media screen and (max-width: 350px) {
+  .container {
+    padding: 25px 10px;
+  }
+}
